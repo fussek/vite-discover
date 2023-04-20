@@ -1,14 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import NewsAllData from '../NewsAllData/NewsAllData';
+import discover_ctgs from '../../assets/categories.js';
 
 const NewsData = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    axios.get('https://api-creator-server.vercel.app/news-data').then(function (res) {
-      setCategories(res.data);
-    });
+    setCategories(discover_ctgs);
   }, []);
 
   return (
